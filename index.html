@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M.BagasSetyoPrathama — Studio kreatif yang bikin kerjaan tenang</title>
+<meta name="description" content="M.BagasSetyoPrathama adalah studio kreatif independen: brand, web, dan konten untuk bisnis yang ingin tampil rapi tanpa drama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@1,6..72,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3eee4;
+  --ink:#16140f;
+  --soft:#6d675b;
+  --line:#d9d2c3;
+  --accent:#ff5a2c;
+  --moss:#2f4a3a;
+  --sand:#e8dfcc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.serif{font-family:'Newsreader',serif;font-style:italic;font-weight:400}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* nav */
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(243,238,228,.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
+.logo i{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(.55);opacity:.6}}
+.menu{display:flex;gap:30px}
+.menu a{font-size:15px;position:relative}
+.menu a::after{content:"";position:absolute;left:0;bottom:-3px;height:1.5px;width:0;background:var(--ink);transition:width .25s}
+.menu a:hover::after{width:100%}
+.btn{
+  display:inline-block;padding:11px 20px;border-radius:99px;
+  background:var(--ink);color:var(--paper);font-size:15px;font-weight:600;
+  transition:transform .2s, background .2s;
+}
+.btn:hover{background:var(--accent);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{padding:90px 0 70px;position:relative;overflow:hidden}
+.hero .tag{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);padding:7px 14px;border-radius:99px;margin-bottom:34px;background:#faf7f0}
+.hero .tag b{width:7px;height:7px;background:#3aa75b;border-radius:50%}
+h1{
+  font-size:clamp(46px,9vw,128px);
+  line-height:.92;
+  letter-spacing:-.045em;
+  font-weight:800;
+  max-width:11ch;
+}
+h1 em{font-family:'Newsreader',serif;font-weight:400;letter-spacing:-.03em;color:var(--accent)}
+.hero-bottom{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;margin-top:56px;align-items:end}
+.hero-bottom p{font-size:20px;max-width:34em;color:#3a362d}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.blob{
+  position:absolute;right:-90px;top:60px;width:340px;height:340px;
+  background:var(--sand);
+  border-radius:58% 42% 47% 53% / 46% 55% 45% 54%;
+  z-index:-1;animation:morph 14s ease-in-out infinite;
+}
+@keyframes morph{
+  50%{border-radius:42% 58% 60% 40% / 56% 40% 60% 44%;transform:rotate(14deg) translateY(16px)}
+}
+
+/* marquee */
+.marquee{border-block:1px solid var(--ink);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap}
+.track{display:inline-block;padding:16px 0;animation:slide 28s linear infinite}
+.track span{font-size:26px;font-weight:600;letter-spacing:-.02em;margin:0 26px}
+.track span.s{color:var(--accent);font-family:'Newsreader',serif;font-style:italic;font-weight:400}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+h2{font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.035em;font-weight:800;max-width:14ch}
+h2 em{font-family:'Newsreader',serif;font-weight:400}
+.label{color:var(--soft)}
+
+/* tentang */
+.about{display:grid;grid-template-columns:1fr 1.3fr;gap:70px}
+.about .big{font-size:clamp(24px,2.6vw,34px);line-height:1.25;letter-spacing:-.02em}
+.about .big em{color:var(--accent)}
+.about .cols{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:40px;color:var(--soft);font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:80px;border-top:1px solid var(--ink)}
+.stat{padding:26px 22px 0 0}
+.stat+.stat{padding-left:22px;border-left:1px solid var(--line)}
+.stat strong{display:block;font-size:clamp(40px,5vw,68px);letter-spacing:-.04em;line-height:1}
+.stat span{color:var(--soft);font-size:14px}
+
+/* layanan */
+.services{background:var(--ink);color:var(--paper)}
+.services .label{color:#9c9584}
+.svc{border-top:1px solid #3a372f;display:grid;grid-template-columns:70px 1fr 1.2fr 40px;gap:20px;align-items:center;padding:30px 0;transition:padding .3s, background .3s;cursor:default}
+.svc:last-child{border-bottom:1px solid #3a372f}
+.svc:hover{padding-left:18px;background:#1f1d17}
+.svc .n{color:var(--accent)}
+.svc h3{font-size:clamp(24px,3vw,40px);letter-spacing:-.03em;font-weight:600}
+.svc p{color:#b3ac9a;font-size:16px}
+.svc .ar{font-size:26px;transition:transform .3s}
+.svc:hover .ar{transform:translateX(6px) rotate(-45deg);color:var(--accent)}
+
+/* karya */
+.work{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.card{display:flex;flex-direction:column;gap:14px}
+.card:nth-child(1){grid-column:span 7}
+.card:nth-child(2){grid-column:span 5;margin-top:70px}
+.card:nth-child(3){grid-column:span 5}
+.card:nth-child(4){grid-column:span 7;margin-top:70px}
+.cover{
+  aspect-ratio:4/3;border-radius:14px;position:relative;overflow:hidden;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.card:hover .cover{transform:scale(.985) rotate(-.4deg)}
+.cover .t{position:absolute;left:22px;bottom:18px;font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-.04em;line-height:.95}
+.c1{background:var(--accent);color:var(--ink)}
+.c1::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:var(--ink)}
+.c1::after{content:"";position:absolute;right:70px;top:90px;width:110px;height:110px;border-radius:50%;border:14px solid var(--paper)}
+.c2{background:var(--moss);color:var(--paper)}
+.c2::before{content:"";position:absolute;inset:22px 22px auto auto;width:150px;height:150px;background:repeating-linear-gradient(45deg,var(--paper) 0 6px,transparent 6px 16px);border-radius:8px;opacity:.9}
+.c3{background:var(--sand);color:var(--ink)}
+.c3::before{content:"";position:absolute;left:22px;top:22px;width:60%;height:46%;background:var(--ink);border-radius:60px 8px 60px 8px}
+.c3::after{content:"";position:absolute;right:26px;top:70px;width:90px;height:90px;background:var(--accent);transform:rotate(18deg)}
+.c4{background:#1c2a4a;color:#f3eee4}
+.c4::before{content:"";position:absolute;left:0;right:0;top:34%;height:36px;background:var(--accent);transform:skewY(-6deg);box-shadow:0 56px 0 #f3eee4,0 112px 0 #3d5a9c}
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.meta h4{font-size:20px;letter-spacing:-.02em}
+.meta span{color:var(--soft)}
+
+/* proses */
+.process{background:var(--sand)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:30px 26px 34px 0;border-top:2px solid var(--ink);position:relative}
+.step+.step{padding-left:26px}
+.step .mono{color:var(--accent);font-weight:500}
+.step h3{font-size:28px;letter-spacing:-.03em;margin:16px 0 10px}
+.step p{color:#4a463b;font-size:16px}
+
+/* tim */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.person .av{
+  aspect-ratio:1;border-radius:50% 50% 14px 14px;display:grid;place-items:center;
+  font-size:64px;font-weight:800;letter-spacing:-.05em;margin-bottom:14px;
+  transition:border-radius .4s;
+}
+.person:hover .av{border-radius:14px 14px 50% 50%}
+.person:nth-child(1) .av{background:var(--accent)}
+.person:nth-child(2) .av{background:var(--moss);color:var(--paper)}
+.person:nth-child(3) .av{background:var(--ink);color:var(--paper)}
+.person:nth-child(4) .av{background:var(--line)}
+.person h4{font-size:19px;letter-spacing:-.02em}
+.person span{color:var(--soft);font-size:15px}
+
+/* testimoni */
+.quote{max-width:900px}
+.quote blockquote{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(28px,4vw,50px);line-height:1.15;letter-spacing:-.02em}
+.quote cite{display:block;margin-top:26px;font-style:normal;color:var(--soft)}
+
+/* kontak */
+.contact{background:var(--accent);padding:100px 0 40px}
+.contact h2{max-width:none;font-size:clamp(46px,10vw,150px);line-height:.9}
+.contact .row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-top:56px;align-items:flex-end}
+.contact .mail{font-size:clamp(22px,3vw,38px);font-weight:600;letter-spacing:-.03em;border-bottom:3px solid var(--ink)}
+.contact .mail:hover{border-color:transparent}
+.contact .links{display:flex;gap:22px}
+footer{margin-top:90px;padding-top:22px;border-top:1px solid rgba(22,20,15,.35);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s, transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .menu{display:none}
+  .hero-bottom,.about{grid-template-columns:1fr;gap:30px}
+  .cta{justify-content:flex-start}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(n+3){margin-top:30px}
+  .svc{grid-template-columns:44px 1fr 30px}
+  .svc p{grid-column:2/3;grid-row:2}
+  .card:nth-child(n){grid-column:span 12;margin-top:0}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(3){padding-left:0}
+  .team{grid-template-columns:1fr 1fr}
+  .blob{display:none}
+  section{padding:80px 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><i></i>M.BagasSetyoPrathama</a>
+    <nav class="menu">
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#karya">Karya</a>
+      <a href="#proses">Cara kerja</a>
+      <a href="#tim">Tim</a>
+    </nav>
+    <a href="#kontak" class="btn">Ngobrol yuk</a>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="blob"></div>
+  <div class="wrap">
+    <div class="tag mono"><b></b> Terima proyek baru — Q1 2027</div>
+    <h1>Kerjaan kelar, <em>kepala</em> tetap adem.</h1>
+    <div class="hero-bottom">
+      <p>Kami studio kreatif kecil yang membantu bisnis punya brand, website, dan konten yang rapi. Tanpa revisi tak berujung, tanpa drama jam dua pagi.</p>
+      <div class="cta">
+        <a href="#karya" class="btn">Lihat karya kami</a>
+        <a href="#kontak" class="btn ghost">Minta penawaran</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Brand identity</span><span class="s">&amp;</span><span>Website</span><span class="s">&amp;</span><span>Konten sosial</span><span class="s">&amp;</span><span>Kemasan</span><span class="s">&amp;</span><span>Campaign</span><span class="s">&amp;</span>
+    <span>Brand identity</span><span class="s">&amp;</span><span>Website</span><span class="s">&amp;</span><span>Konten sosial</span><span class="s">&amp;</span><span>Kemasan</span><span class="s">&amp;</span><span>Campaign</span><span class="s">&amp;</span>
+  </div>
+</div>
+
+<section id="tentang">
+  <div class="wrap">
+    <div class="about">
+      <div class="rv">
+        <p class="mono label">( 01 ) Tentang kami</p>
+      </div>
+      <div class="rv">
+        <p class="big">Namanya panjang, tapi prinsipnya pendek: kerja kreatif yang bagus lahir dari proses yang <em>tenang</em>, bukan dari lembur. Di balik setiap proyek ada orang nyata yang bertanggung jawab, bukan sekadar tiket di antrean.</p>
+        <div class="cols">
+          <p>Berdiri sejak 2019 di Surabaya, kami mulai dari dua orang dan satu laptop pinjaman. Sekarang tim kami delapan orang, masih kecil dengan sengaja, supaya setiap klien dikerjakan langsung oleh orang yang sama dari awal sampai akhir.</p>
+          <p>Kami percaya brand yang kuat itu jujur, konsisten, dan gampang diingat. Jadi kami lebih suka bertanya banyak di depan daripada memperbaiki banyak di belakang.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats rv">
+      <div class="stat"><strong data-n="120">0</strong><span>proyek selesai</span></div>
+      <div class="stat"><strong data-n="64">0</strong><span>klien, 41 di antaranya balik lagi</span></div>
+      <div class="stat"><strong data-n="8">0</strong><span>orang di tim</span></div>
+      <div class="stat"><strong data-n="7">0</strong><span>tahun berjalan</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="layanan" class="services">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>Yang bisa kami <em>kerjakan</em></h2>
+      <p class="mono label">( 02 ) Layanan</p>
+    </div>
+
+    <div class="svc rv"><span class="n mono">01</span><h3>Brand identity</h3><p>Logo, warna, tipografi, sampai panduan pemakaiannya. Satu paket yang bisa langsung dipakai tim Anda.</p><span class="ar">→</span></div>
+    <div class="svc rv"><span class="n mono">02</span><h3>Website &amp; landing page</h3><p>Ringan, cepat dibuka di HP, dan gampang Anda ubah sendiri tanpa harus menelepon kami tiap ganti harga.</p><span class="ar">→</span></div>
+    <div class="svc rv"><span class="n mono">03</span><h3>Konten &amp; sosial media</h3><p>Kalender konten, desain feed, foto produk, dan video pendek yang terasa seperti satu suara.</p><span class="ar">→</span></div>
+    <div class="svc rv"><span class="n mono">04</span><h3>Kemasan &amp; cetak</h3><p>Dari label botol sampai katalog. Kami urus sampai file siap naik cetak dan cek warna ke percetakan.</p><span class="ar">→</span></div>
+  </div>
+</section>
+
+<section id="karya">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>Beberapa karya <em>pilihan</em></h2>
+      <p class="mono label">( 03 ) 2023 — 2026</p>
+    </div>
+
+    <div class="work">
+      <a href="#kontak" class="card rv">
+        <div class="cover c1"><div class="t">Kopi<br>Satu Lima</div></div>
+        <div class="meta"><h4>Kopi Satu Lima</h4><span class="mono">Brand · Kemasan</span></div>
+      </a>
+      <a href="#kontak" class="card rv">
+        <div class="cover c2"><div class="t">Ladang<br>Kita</div></div>
+        <div class="meta"><h4>Ladang Kita</h4><span class="mono">Website</span></div>
+      </a>
+      <a href="#kontak" class="card rv">
+        <div class="cover c3"><div class="t">Rumah<br>Tenun</div></div>
+        <div class="meta"><h4>Rumah Tenun</h4><span class="mono">Brand · Konten</span></div>
+      </a>
+      <a href="#kontak" class="card rv">
+        <div class="cover c4"><div class="t">Gerak<br>Kota</div></div>
+        <div class="meta"><h4>Gerak Kota</h4><span class="mono">Campaign</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="proses" class="process">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>Cara kerja <em>kami</em></h2>
+      <p class="mono label">( 04 ) Proses</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="mono">Minggu 1</span><h3>Dengar</h3><p>Kami duduk bareng, tanya sebanyak mungkin, dan baru mulai mencoret setelah paham tujuan Anda.</p></div>
+      <div class="step rv"><span class="mono">Minggu 2–3</span><h3>Rancang</h3><p>Tiga arah awal. Anda pilih satu, kami dalami. Tidak ada kejutan di tengah jalan.</p></div>
+      <div class="step rv"><span class="mono">Minggu 4–5</span><h3>Bangun</h3><p>Eksekusi penuh dengan update singkat tiap Jumat, jadi Anda selalu tahu posisi pekerjaan.</p></div>
+      <div class="step rv"><span class="mono">Minggu 6</span><h3>Serah terima</h3><p>File rapi, panduan jelas, dan dua minggu dukungan gratis kalau ada yang masih mengganjal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tim">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>Orang di <em>balik layar</em></h2>
+      <p class="mono label">( 05 ) Tim inti</p>
+    </div>
+    <div class="team">
+      <div class="person rv"><div class="av">R</div><h4>Rani Kusuma</h4><span>Founder &amp; Creative Director</span></div>
+      <div class="person rv"><div class="av">D</div><h4>Dimas Pratama</h4><span>Lead Developer</span></div>
+      <div class="person rv"><div class="av">N</div><h4>Nadia Wulandari</h4><span>Brand Strategist</span></div>
+      <div class="person rv"><div class="av">B</div><h4>Bagas Hermawan</h4><span>Motion &amp; Video</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap quote rv">
+    <p class="mono label" style="margin-bottom:24px">( 06 ) Kata klien</p>
+    <blockquote>“Biasanya kerja bareng agensi bikin saya stres. Kali ini justru saya yang sering lupa kalau proyeknya lagi jalan, karena semuanya sudah beres sebelum saya tanya.”</blockquote>
+    <cite class="mono">Pemilik Kopi Satu Lima</cite>
+  </div>
+</section>
+
+</main>
+
+<footer-wrap>
+<section id="kontak" class="contact">
+  <div class="wrap">
+    <p class="mono" style="margin-bottom:24px">( 07 ) Kontak</p>
+    <h2>Punya ide? Kabari kami.</h2>
+    <div class="row">
+      <a class="mail" href="mailto:halo@mbagassetyoprathama.id">halo@mbagassetyoprathama.id</a>
+      <div class="links mono">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Behance</a>
+      </div>
+    </div>
+    <footer class="mono">
+      <span>© 2026 M.BagasSetyoPrathama</span>
+      <span>Surabaya, Jawa Timur</span>
+      <a href="#top">Kembali ke atas ↑</a>
+    </footer>
+  </div>
+</section>
+</footer-wrap>
+
+<script>
+// muncul pelan saat di-scroll
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const sibs=[...e.target.parentElement.children].filter(c=>c.classList.contains('rv'));
+      e.target.style.transitionDelay=(sibs.indexOf(e.target)*80)+'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// hitung angka statistik
+const so = new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el=e.target, to=+el.dataset.n, t0=performance.now(), dur=1400;
+    (function tick(t){
+      const p=Math.min((t-t0)/dur,1);
+      el.textContent=Math.round(to*(1-Math.pow(1-p,3)));
+      if(p<1) requestAnimationFrame(tick);
+    })(t0);
+    so.unobserve(el);
+  });
+});
+document.querySelectorAll('[data-n]').forEach(el=>so.observe(el));
+</script>
+</body>
+</html>
